@@ -1,0 +1,11 @@
+<h1>Search Results</h1>
+
+<% @recipes.each do |recipe| %>
+  <div>
+    <h2><%= recipe[:name] %></h2>
+    <img src="<%= recipe[:image] %>" alt="<%= recipe[:name] %>">
+    <p><%= recipe[:ingredients].join('<br>') %></p>
+    <p>Source: <%= recipe[:source] %></p>
+    <p><a href="<%= recipe[:url] %>">View Recipe</a></p>
+  </div>
+<% end %>
