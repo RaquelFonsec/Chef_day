@@ -1,18 +1,12 @@
 
 class RecipesController < ApplicationController
+  #exibe uma lista de receitas
   def index
-    if user_signed_in?
-      # se o usuário estiver logado, redirecione-o para a página de boas-vindas
-      redirect_to welcome_path
+    if params[:search].present? #se search presente
+      response = HTTParty.get ou HTTPS.get("https://api.developer.edman.com/search?q=#{params[:search]}") #faz uma solicitacao para a API externa
+      @recipes = JSON.parse(response.body) #analisa a resposta e armazena na variavel recipes
     else
-      # caso contrário, exiba a lista de receitas
-      @recipes = Recipe.all
+      @recipes = []# se search nao estiver presente rdefine uma variavel recipe como matriz vazia
     end
   end
-
-  def welcome
-    # Adicione aqui a lógica para exibir a página de boas-vindas
-  end
-
-  # outras ações do controlador aqui
 end
