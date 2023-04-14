@@ -1,20 +1,56 @@
-// Specific CSS for your home-page
-.home-page {
-  .image-container {
-    overflow: hidden;
-
-    img {
-      float: left;
-      width: 600px;
-      height: 300px;
-      margin-right: 20px;
-    }
-
-    .description {
-      margin-left: 620px;
-      font-size: 24px;
-    }
-  }
+// *{
+//   font-family: 'Playfair Display', serif;
+// }
+h1{
+  font-family: 'Playfair Display', serif;
+}
+.content {
+  color: #f1f1f1;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  text-align: center;
+  z-index: 1;
 }
 
+#hero-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
 
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+}
+
+.header {
+  position: relative;
+}
+
+.search-form {
+  margin-top: 20px;
+}
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+
+.search-form {
+  margin-top: 20px;
+}
+
+.padding-body {
+  padding-top: 66px;
+}
