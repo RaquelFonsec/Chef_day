@@ -1,15 +1,42 @@
-<!-- app/views/recipes/welcome.html.erb -->
-<div class="container">
-  <h1 style="font-size: 36px;"><span style="font-size: 48px;">Organize sua rotina alimentar</span></h1>
-  <ul style="font-size: 24px;">
-    <li><strong>Torne sua rotina mais prática e eficiente</strong> </li>
-    <li><strong>Organize seu cardápio diário,semanal,quinzenal ou mensal</strong> </li>
-    <li><strong>Receitas práticas e deliciosas</strong></li>
-    <li><strong>Planeje refeições equilibradas</strong></li>
-    <li><strong>Personalize seu cardápio</strong> </li>
-
-  </ul>
+<div class="header">
+  <form class="search-form form-inline my-2 my-lg-0">
+    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+    <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
+  </form>
+  <nav>
+    <div class="container">
+      <h1 style="font-size: 36px;"><span style="font-size: 48px;">Organize sua rotina alimentar</span></h1>
+      <ul style="font-size: 24px;">
+        <li><strong>Torne sua rotina mais prática e eficiente</strong></li>
+        <li><strong>Organize seu cardápio diário,semanal,quinzenal ou mensal</strong></li>
+        <li><strong>Receitas práticas e deliciosas</strong></li>
+        <li><strong>Planeje refeições equilibradas</strong></li>
+        <li><strong>Personalize seu cardápio</strong></li>
+        <video src="https://res.cloudinary.com/dbtr2yaho/video/upload/c_scale,w_586/v1681427255/food-24999_hyoafp.mp4" controls></video>
+      </ul>
+    </div>
+  </nav>
 </div>
+<style>
+.header {
+  position: relative;
+}
 
+.search-form {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 10px;
+}
 
-<img src="https://res.cloudinary.com/dbtr2yaho/image/upload/v1681428743/spaghetti-g61c51cdad_1920_mtm3rt.jpg" alt="mulher" width="600" height="300">
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+  border-color: #1e7e34;
+}
+</style>
+

@@ -4,7 +4,7 @@
     <div class="d-flex justify-content-center">
       <%= link_to "#", class: "navbar-brand" do %>
       <% end %>
-<img src="https://res.cloudinary.com/dbtr2yaho/image/upload/v1681431032/Chef_Day_ixmeuj.png" alt="imagem" style="width: 1200px; height: 140px;">
+<//img src="https://res.cloudinary.com/dbtr2yaho/image/upload/v1681431032/Chef_Day_ixmeuj.png" alt="imagem" style="width: 1200px; height: 140px;">
 
       <p class="navbar-text"></p>
     </div>
@@ -23,12 +23,11 @@
             <%= link_to "Messages", "#", class: "nav-link" %>
           </li>
           <li class="nav-item dropdown">
-            <%= image_tag "https://res.cloudinary1681425020/cooking-gf8c95875a_1280_frb2yk.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "My Recipes", "#", class: "dropdown-item" %>
-              <%= link_to "Meal Plan", "#", class: "dropdown-item" %>
-              <%= link_to "Meal Plan Recipes", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+        <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
             </div>
           </li>
         <% else %>
