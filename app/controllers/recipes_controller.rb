@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
   end
 
   def search
-    # Renderiza a página de busca
+    # Renderizar a página de busca
   end
 
   def create
