@@ -1,1 +1,18 @@
 // Specific CSS for your home-page
+.home-page {
+  .image-container {
+    overflow: hidden;
+
+    img {
+      float: left;
+      width: 600px;
+      height: 300px;
+      margin-right: 20px;
+    }
+
+    .description {
+      margin-left: 620px;
+      font-size: 24px;
+    }
+  }
+}
