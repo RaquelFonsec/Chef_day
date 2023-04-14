@@ -1,3 +1,4 @@
+require 'net/http'
 
 class RecipesController < ApplicationController
   def index
