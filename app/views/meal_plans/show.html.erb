@@ -1,0 +1,18 @@
+<h1>Meal Plan</h1>
+
+<div class="row">
+  <% @meal_plan.meal_plan_recipes.each do |meal_plan_recipe| %>
+    <div class="col-md-4">
+      <div class="card mb-4 box-shadow">
+        <% if meal_plan_recipe.recipe.image.attached? %>
+          <%= image_tag(meal_plan_recipe.recipe.image.variant(resize: "300x300"), class: "card-img-top") %>
+        <% end %>
+        <div class="card-body">
+          <h3 class="card-title"><%= meal_plan_recipe.recipe.name %></h3>
+          <p class="card-text"><%= meal_plan_recipe.recipe.ingredients %></p>
+          <p class="card-text"><small class="text-muted"><%= meal_plan_recipe.day.strftime('%A, %B %d') %></small></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,13 +1,19 @@
 Rails.application.routes.draw do
-  resources :recipes do
-    resources :meal_plannings
-  end
-
-  post 'search', to: 'search#search', as: 'search'
-  get '/recipes/search', to: 'recipes#search', as: 'recipes_search'
+  root to: "pages#home"
 
   devise_for :users, controllers: { sessions: 'users/sessions' }
 
-  root to: "pages#home"
-end
+  get '/recipes/search', to: 'recipes#search', as: 'recipes_search'
 
+  resources :recipes do
+    member do
+      post :add_to_meal_plan
+    end
+    resources :meal_plannings
+  end
+
+  resources :meal_plan_recipes, only: [:create]
+
+  resources :meal_plans, only: [:new, :create]
+
+end
