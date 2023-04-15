@@ -53,6 +53,14 @@ class RecipesController < ApplicationController
     end
   end
 
+  def save
+    @recipe = Recipe.find(params[:id])
+    @my_plan_recipes = current_user.my_plan_recipes.create(name: @recipe.name, url: @recipe.url)
+    redirect_to my_plan_recipes_path, notice: 'Receita salva com sucesso!'
+  end
+
+
+
   def create
     @recipe = current_user.recipes.new(recipe_params)
 

@@ -6,4 +6,5 @@
 <%= form_tag add_to_meal_plan_recipe_path(@recipe), method: :post do %>
   <%= select_tag :day, options_for_select(['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']) %>
   <%= submit_tag "Add to meal plan" %>
+
 <% end %>
