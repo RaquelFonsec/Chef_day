@@ -1,6 +1,8 @@
 require 'net/http'
 
 class RecipesController < ApplicationController
+  before_action :authenticate_user!, only: [:my_recipes]
+
   def index
     if params[:query].present?
       app_id = ENV['EDAMAM_APP_ID']
@@ -23,7 +25,15 @@ class RecipesController < ApplicationController
   end
 
   def search
-    # Renderizar a página de busca
+    if params[:search_term].present?
+      @recipes = Recipe.where("name LIKE ?", "%#{params[:search_term]}%")
+    else
+      @recipes = Recipe.all
+    end
+  end
+
+  def my_recipes
+    @recipes = current_user.recipes
   end
 
   def create
@@ -38,10 +48,7 @@ class RecipesController < ApplicationController
 
   private
 
-
   def recipe_params
     params.fetch(:recipe, {}).permit(:name, :ingredients, :instructions, :image)
   end
-
-
-  end
+end

@@ -2,6 +2,8 @@
 <h1>Recipes</h1>
 
 <%= form_with url: recipes_path, method: :get, class: "form-inline" do |f| %>
+
+
   <%= f.text_field :query, placeholder: "Search for a recipe", class: "form-control mr-sm-2" %>
   <%= f.submit "Search", class: "btn btn-outline-success my-2 my-sm-0" %>
 <% end %>
