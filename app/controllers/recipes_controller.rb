@@ -32,12 +32,29 @@ class RecipesController < ApplicationController
     end
   end
 
+
   def my_recipes
     @recipes = current_user.recipes
   end
 
+  def show
+    @recipe = Recipe.find(params[:id])
+  end
+
+  def add_to_meal_plan
+    @recipe = Recipe.find(params[:id])
+    @meal_plan = current_user.meal_plans.find_or_create_by(plan_type: 'weekly')
+
+    if @meal_plan.meal_plan_recipes.where(recipe_id: @recipe.id).exists?
+      redirect_to meal_plan_path, notice: 'Recipe already exists in meal plan.'
+    else
+      @meal_plan.meal_plan_recipes.create(recipe_id: @recipe.id, day: Date.current)
+      redirect_to meal_plan_path, notice: 'Recipe added to meal plan.'
+    end
+  end
+
   def create
-    @recipe = Recipe.new(recipe_params)
+    @recipe = current_user.recipes.new(recipe_params)
 
     if @recipe.save
       redirect_to @recipe, notice: 'Recipe was successfully created.'

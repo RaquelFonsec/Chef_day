@@ -19,3 +19,17 @@
 }
 
 
+.login-btn {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #007bff;
+  border-color: #007bff;
+  border-radius: 5px;
+  padding: 10px 40px;
+}
+
+.login-btn:hover {
+  background-color: #0062cc;
+  border-color: #005cbf;
+}

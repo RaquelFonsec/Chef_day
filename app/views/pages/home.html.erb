@@ -1,21 +1,47 @@
 
   <section class="hero">
-    <video id="hero-video" autoplay loop muted>
-      <source class="video" src="https://res.cloudinary.com/dbtr2yaho/video/upload/c_scale,w_586/v1681427255/food-24999_hyoafp.mp4" type="video/mp4">
-    </video>
-  </section>
-  <div class="content">
-    <h1>Descubra novas receitas e planeje sua semana com praticidade. Encontre tudo o que precisa para uma alimentação saudável em um só lugar.</h1>
-    <form class="search-form form-inline my-2 my-lg-0 d-flex">
-      <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-      <button class="btn btn-success my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h1 class="title">
+          <span>Chef Day</span>
+          <span class="chef-hat">👨‍🍳</span>
+        </h1>
+        <p class="description">Chef Day is your best ally to organize your eating routine in a practical and efficient way. With our calendar, you can plan your daily, weekly, biweekly and monthly meals without wasting time and energy thinking about what to prepare. In addition, our collection of numerous recipes and different preparation methods will transform your kitchen routine into a moment of creativity and pleasure. Chef Day is the perfect website for those who seek practicality and flavor in their eating routine! </p>
+        <a href="<%= new_user_registration_path %>" class="btn btn-primary">Start now</a>
+      </div>
+      <div class="col-md-6" style="margin-top: 100px;">
+        <img src="https://res.cloudinary.com/dbtr2yaho/image/upload/v1681586362/retro-young-woman-clothes-cooking-soup-her-kitchen-room-vector-color-illustration-122361523_owfmzl.jpg" alt="Food Image" class="img-fluid" height="800" width="400">
+
+
   </div>
-  <%# <h1 style="font-size: 36px;"><span style="font-size: 48px;">Organize sua rotina alimentar</span></h1>
-  <ul style="font-size: 24px;">
-    <li><strong>Torne sua rotina mais prática e eficiente</strong></li>
-    <li><strong>Organize seu cardápio diário,semanal,quinzenal ou mensal</strong></li>
-    <li><strong>Receitas práticas e deliciosas</strong></li>
-    <li><strong>Planeje refeições equilibradas</strong></li>
-    <li><strong>Personalize seu cardápio</strong></li>
-  </ul> %>
+</div>
+  </div>
+</section>
+<style>
+.hero {
+background-color: #F9F9F9;
+padding: 40px 0;
+}
+
+.title {
+font-size: 32px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.chef-hat {
+font-size: 40px;
+margin-left: 5px;
+}
+
+.description {
+font-size: 18px;
+line-height: 1.2;
+margin-bottom: 20px;
+}
+
+.hero img {
+margin-bottom: 15px;
+}
+</style>
