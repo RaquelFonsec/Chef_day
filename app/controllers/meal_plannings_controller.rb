@@ -8,7 +8,10 @@ class MealPlanningsController < ApplicationController
 
   # GET /meal_plannings/1 or /meal_plannings/1.json
   def show
+    @meal_planning = MealPlanning.find(params[:id])
+    @recipes = @meal_planning.recipes
   end
+
 
   # GET /meal_plannings/new
   def new
@@ -19,9 +22,14 @@ class MealPlanningsController < ApplicationController
   def edit
   end
 
-  # POST /meal_plannings or /meal_plannings.json
-  def create
-    @meal_planning = MealPlanning.new(meal_planning_params)
+  def create_recipe
+    @meal_planning = MealPlanning.find(params[:id])
+    @recipe = Recipe.find(params[:recipe_id])
+    @meal_planning.recipes << @recipe
+
+    render json: { status: 'success', message: 'Receita adicionada com sucesso' }
+
+
 
     respond_to do |format|
       if @meal_planning.save

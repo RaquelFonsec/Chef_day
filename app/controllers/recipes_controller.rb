@@ -53,6 +53,17 @@ class RecipesController < ApplicationController
     end
   end
 
+  def save
+    @recipe = Recipe.find(params[:recipe_id])
+    current_user.saved_recipes << @recipe
+
+    respond_to do |format|
+      format.json { render json: {message: "Receita salva com sucesso!"} }
+    end
+  end
+
+
+
   def create
     @recipe = current_user.recipes.new(recipe_params)
 
