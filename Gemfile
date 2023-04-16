@@ -77,5 +77,6 @@ group :test do
   gem "webdrivers"
   gem "cloudinary"
   gem 'http'
+gem 'bootstrap', '~> 5.1', '>= 5.1.0'
 
 end

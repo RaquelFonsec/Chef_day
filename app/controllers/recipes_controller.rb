@@ -54,9 +54,12 @@ class RecipesController < ApplicationController
   end
 
   def save
-    @recipe = Recipe.find(params[:id])
-    @my_plan_recipes = current_user.my_plan_recipes.create(name: @recipe.name, url: @recipe.url)
-    redirect_to my_plan_recipes_path, notice: 'Receita salva com sucesso!'
+    @recipe = Recipe.find(params[:recipe_id])
+    current_user.saved_recipes << @recipe
+
+    respond_to do |format|
+      format.json { render json: {message: "Receita salva com sucesso!"} }
+    end
   end
 
 

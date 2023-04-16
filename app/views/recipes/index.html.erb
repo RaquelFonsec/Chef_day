@@ -3,8 +3,8 @@
 
 
 
-<div class="video-container">
-  <img src="https://res.cloudinary.com/dbtr2yaho/image/upload/v1681598040/young-woman-chef-retro-style-clothes-cooking-holding-cook-book-her-hand-kitchen-room-146691020_ble1go.jpg" alt="Descrição da imagem">
+<div class="image-container">
+<img src="https://res.cloudinary.com/dbtr2yaho/image/upload/v1681677210/woman-cooking_jyvaal.webp" alt="Descrição da imagem">
 
   <div class="search-form">
     <%= form_with url: recipes_path, method: :get, class: "form-inline" do |f| %>
@@ -50,8 +50,8 @@
 
   .search-form {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 35%;
+    left: 30%;
     transform: translate(-50%, -50%);
     z-index: 1;
     width: 100%;
@@ -66,6 +66,30 @@
   @media (max-width: 768px) {
     .search-form {
       padding: 10px;
+
+      .card {
+  background-color: #f5f5f5;
+}
     }
   }
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  max-height: 100%;
+}
+
+
+
+
+
 </style>

@@ -6,3 +6,10 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import SaveRecipeController from "./controllers/save_recipe_controller"
+
+const application = Application.start()
+application.register("save-recipe", SaveRecipeController)
+
+ApplicationController.register('MealPlanRecipesController', MealPlanRecipesController)
