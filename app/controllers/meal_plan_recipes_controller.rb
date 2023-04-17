@@ -1,5 +1,14 @@
 class MealPlanRecipesController < ApplicationController
+
+
+  def new
+    @meal_plan = MealPlan.new
+  end
+
+
+
   def create
+
   @meal_plan = MealPlan.find(params[:meal_plan_id])
   @recipe = Recipe.find(params[:recipe_id])
   @meal_plan_recipe = MealPlanRecipe.new(meal_plan: @meal_plan, recipe: @recipe)

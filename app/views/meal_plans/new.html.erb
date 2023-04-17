@@ -1,12 +1,16 @@
-<h1>New Meal Plan</h1>
 
-<%= form_for @meal_plan do |f| %>
-  <div class="field">
+<%= form_with model: @meal_plan, url: meal_plans_path, method: :post, class: "form" do |f| %>
+  <div class="form-group">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Create" %>
+  <div class="form-group">
+    <%= f.label :start_date %>
+    <%= f.date_field :start_date, class: "form-control" %>
   </div>
+  <div class="form-group">
+    <%= f.label :end_date %>
+    <%= f.date_field :end_date, class: "form-control" %>
+  </div>
+  <%= f.submit "Create Meal Plan", class: "btn btn-primary" %>
 <% end %>
